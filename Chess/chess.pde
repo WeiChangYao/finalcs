@@ -1,5 +1,8 @@
+import java.awt.Point;
+import java.awt.MouseInfo;
 Tile[][] board;
 Tile current;
+
 void setup() {
   size(800, 800);
   background(255);
@@ -17,10 +20,16 @@ void setup() {
     }
     prev= !prev;
   }
+  current = board[0][0];
 }
 void draw(){
-  board[mouseX/100%8][mouseY/100%8].change();
-  if
+  
+  Tile past = current;
+  current = board[mouseX/100%8][mouseY/100%8];
+  current.change();
+  if(past!=current)past.display();
+  
 }
+
 
 
