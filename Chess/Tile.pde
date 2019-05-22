@@ -1,6 +1,7 @@
 class Tile{
   int xpos;
   int ypos;
+  Piece on;
   Boolean c;
   public Tile(int a,int b,boolean d){
     xpos = a;
@@ -12,4 +13,8 @@ class Tile{
     else fill(0);
     rect(xpos,ypos,100,100);
   }
+  public void change(){
+    fill(155);
+    rect(xpos,ypos,100,100);
+  } 
 }
