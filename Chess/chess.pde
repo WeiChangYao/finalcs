@@ -1,19 +1,20 @@
-Tile[][] board;
-void setup() {
-  size(800, 800);
-  background(255);
-  smooth();
-  noStroke();
-  boolean prev = true;
-  board =  new Tile[8][8];
-  for(int i = 0; i < 8; i++)
-  {
-    for(int j = 0; j < 8; j++)
-    {
-      board[i][j] = new Tile(i*100,j*100,prev);
-      prev=!prev;
-      board[i][j].display();
-    }
-    prev= !prev;
+class Tile{
+  int xpos;
+  int ypos;
+  Piece on;
+  Boolean c;
+  public Tile(int a,int b,boolean d){
+    xpos = a;
+    ypos = b;
+    c = d;
   }
+  public void display(){
+    if(c)fill(255);
+    else fill(0);
+    rect(xpos,ypos,100,100);
+  }
+  public void hovering(){
+    if(mouseX>=xpos&&mouseX<=xpos+100&&mouseY>=ypos&&mouseY<=ypos) fill(155);
+    rect(xpos,ypos,100,100);
+  } 
 }
