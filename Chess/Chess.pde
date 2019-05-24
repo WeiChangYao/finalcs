@@ -2,8 +2,10 @@ import java.awt.Point;
 import java.awt.MouseInfo;
 Tile[][] board;
 Tile current;
+PImage pawn;
 
 void setup() {
+  pawn = loadImage("pawn.png");
   size(800, 800);
   background(255);
   smooth();
