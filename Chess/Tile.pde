@@ -3,7 +3,7 @@ class Tile{
   int ypos;
   Piece on;
   Boolean c;
-  public Tile(int a,int b,boolean d){
+  public Tile(int a,int b,boolean d){ //Sting name
     xpos = a;
     ypos = b;
     c = d;
@@ -12,6 +12,7 @@ class Tile{
     if(c)fill(255);
     else fill(0);
     rect(xpos,ypos,100,100);
+    //image(pawn, 0, 0);  //image(name xpos, ypos?
   }
   public void change(){
     fill(155);

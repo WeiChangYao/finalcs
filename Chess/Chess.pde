@@ -25,7 +25,6 @@ void setup() {
   current = board[0][0];
 }
 void draw(){
-  
   Tile past = current;
   current = board[mouseX/100%8][mouseY/100%8];
   current.change();
