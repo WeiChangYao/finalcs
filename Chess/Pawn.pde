@@ -1,11 +1,15 @@
-class Pawn extends Piece{
-  Pawn (Tile t, boolean col){
-    super(t,col);
+class Pawn extends Piece {
+  Pawn (Tile t, boolean col) {
+    super(t, col);
   }
-  void display(int x, int y){
-    image(pawn, x, y);
+  void display(int x, int y) {
+    if (col == true) {
+      image(pawn, x, y);
+    } else {
+      image (pawnW, x, y);
+    }
   }
-  boolean getColor(){
+  boolean getColor() {
     return col;
   }
 }
