@@ -1,5 +1,11 @@
 # finalcs
 
+Day 5
+  - Wei Chang Yao
+    - completed abstract class
+    - completed pawn display methods
+    - minor things
+
 Day 4
   - Wei Chang Yao
     - Created abstract class piece
