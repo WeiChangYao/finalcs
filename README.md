@@ -3,6 +3,7 @@ Day 6
   - Wei Chang Yao
     - added chess png set
     - added classes for each chess piece and their display methods
+    
 Day 5
   - Wei Chang Yao
     - completed abstract class
