@@ -5,7 +5,12 @@ class Piece{
  Tile[] possibles;
 
   
-//void move(int x, int y);
+public void move(Tile next){
+  Tile temp = t;
+  t = next;
+  t.on = this;
+  temp.on = null;
+}
  public Piece(Tile a){
    t = a;
    col = true;
@@ -14,7 +19,9 @@ class Piece{
  
  public void display(){
    fill(103,208,36);
-   ellipse(t.getx()+50,t.getx()+50,80,80);
+   System.out.println("here in display  "+ t.getx()+"  "+t.gety());
+   ellipse(t.getx()+50,t.gety()+50,80,80);
+   System.out.println("here in display  "+ t.getx()+"  "+t.gety());
  }
  
 // abstract Tile[] possibleMove();

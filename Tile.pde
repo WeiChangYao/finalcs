@@ -10,14 +10,13 @@ class Tile{
   }
   public void addPiece(Piece thing){
     on = thing;
-    System.out.println("here");
+    thing.t = this;
   }
   public void display(){
     if(c)fill(255);
     else fill(0);
     rect(xpos,ypos,100,100);
-    if(on!=null)
-    on.display();
+    if(on!=null)on.display();
   }
   public void change(){
     fill(155);
