@@ -18,4 +18,10 @@ class Tile{
     fill(155);
     rect(xpos,ypos,100,100);
   } 
+  public int getX(){
+    return xpos;
+  }
+  public int getY(){
+    return ypos;
+  }
 }
