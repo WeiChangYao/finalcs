@@ -4,9 +4,9 @@ class King extends Piece{
   }
   void display() {
     if (col == true) {
-      image(king,t.getX(), t.getY());
+      image(king,t.getX()+20, t.getY()+15);
     } else {
-      image (kingW, t.getX(), t.getY());
+      image (kingW, t.getX()+20, t.getY()+15);
     }
   }
   boolean getColor(){

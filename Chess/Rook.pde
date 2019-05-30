@@ -4,9 +4,9 @@ class Rook extends Piece{
   }
   void display() {
     if (col == true) {
-      image(rook, t.getX(), t.getY());
+      image(rook,t.getX()+20, t.getY()+15);
     } else {
-      image (rookW, t.getX(), t.getY());
+      image (rookW, t.getX()+20, t.getY()+15);
     }
   }
   boolean getColor(){

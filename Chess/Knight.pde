@@ -4,9 +4,9 @@ class Knight extends Piece{
   }
   void display() {
     if (col == true) {
-      image(knight, t.getX(), t.getY());
+      image(knight, t.getX()+20, t.getY()+15);
     } else {
-      image (knightW, t.getX(), t.getY());
+      image (knightW, t.getX()+20, t.getY()+15);
     }
   }
   boolean getColor(){

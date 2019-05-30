@@ -4,9 +4,9 @@ class Bishop extends Piece{
   }
   void display() {
     if (col == true) {
-      image(bishop, t.getX(), t.getY());
+      image(bishop, t.getX()+20, t.getY()+15);
     } else {
-      image (bishopW,t.getX(), t.getY());
+      image (bishopW,t.getX()+20, t.getY()+15);
     }
   }
   boolean getColor(){
