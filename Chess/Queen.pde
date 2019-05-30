@@ -2,11 +2,11 @@ class Queen extends Piece{
   Queen (Tile t, boolean col){
     super(t,col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(queen, x, y);
+      image(queen, t.getX(), t.getY());
     } else {
-      image (queenW, x, y);
+      image (queenW, t.getX(), t.getY());
     }
   }
   boolean getColor(){

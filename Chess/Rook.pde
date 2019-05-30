@@ -2,11 +2,11 @@ class Rook extends Piece{
   Rook (Tile t, boolean col){
     super(t,col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(rook, x, y);
+      image(rook, t.getX(), t.getY());
     } else {
-      image (rookW, x, y);
+      image (rookW, t.getX(), t.getY());
     }
   }
   boolean getColor(){

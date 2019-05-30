@@ -2,11 +2,11 @@ class Knight extends Piece{
   Knight (Tile t, boolean col){
     super(t,col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(knight, x, y);
+      image(knight, t.getX(), t.getY());
     } else {
-      image (knightW, x, y);
+      image (knightW, t.getX(), t.getY());
     }
   }
   boolean getColor(){

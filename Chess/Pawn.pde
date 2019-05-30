@@ -2,11 +2,11 @@ class Pawn extends Piece {
   Pawn (Tile t, boolean col) {
     super(t, col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(pawn, x, y);
+      image(pawn, t.getX()+20, t.getY()+15);
     } else {
-      image (pawnW, x, y);
+      image (pawnW, t.getX()+20, t.getY()+15);
     }
   }
   boolean getColor() {

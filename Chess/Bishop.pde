@@ -2,11 +2,11 @@ class Bishop extends Piece{
   Bishop (Tile t, boolean col){
     super(t,col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(bishop, x, y);
+      image(bishop, t.getX(), t.getY());
     } else {
-      image (bishopW, x, y);
+      image (bishopW,t.getX(), t.getY());
     }
   }
   boolean getColor(){

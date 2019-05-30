@@ -2,11 +2,11 @@ class King extends Piece{
   King (Tile t, boolean col){
     super(t,col);
   }
-  void display(int x, int y) {
+  void display() {
     if (col == true) {
-      image(king, x, y);
+      image(king,t.getX(), t.getY());
     } else {
-      image (kingW, x, y);
+      image (kingW, t.getX(), t.getY());
     }
   }
   boolean getColor(){

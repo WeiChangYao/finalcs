@@ -45,11 +45,14 @@ void setup() {
     prev= !prev;
   }
   current = board[0][0];
+  Pawn a = new Pawn(board[1][1], false);
+  board[1][1].on = a;
 }
+
 void draw(){
   Tile past = current;
   current = board[mouseX/100%8][mouseY/100%8];
   current.change();
   if(past!=current)past.display();
-  
+  board[1][1].on.display();
 }
