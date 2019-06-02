@@ -1,13 +1,14 @@
 import java.awt.Point;
 import java.awt.MouseInfo;
+import java.util.*;
 Tile[][] board;
 Tile start;
 Tile end;
 Piece b;
-ArrayList<Tile> threatsTrue;
-ArrayList<Tile> threatsFalse;
-ArrayList<Tile> legalTrue;
-ArrayList<Tile> legalFalse;
+Set<Tile> threatsTrue= new HashSet<Tile>(); 
+Set<Tile> threatsFalse= new HashSet<Tile>(); 
+Set<Tile> LegalTrue= new HashSet<Tile>(); 
+Set<Tile> LegalFalse= new HashSet<Tile>(); 
 boolean inCheckTrue;
 boolean inCheckFalse;
 ArrayList<Tile> Holder;
