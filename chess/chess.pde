@@ -123,7 +123,7 @@ void setup() {
    KF.addPiece(p2);
    KT.display();
    KF.display();
-     //This following keeps up to date on if check the threats;
+//This following keeps up to date on if check the threats;
   for(int i = 0 ; i < 8 ; i++)
   {
     for(int j = 0 ; j < 8 ; j++)
@@ -132,12 +132,12 @@ void setup() {
      {
        if(board[i][j].on.col)
        {
-         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         ArrayList<Tile> poss = board[i][j].on.threatning();
          for(Tile temp : poss)threatsTrue.add(temp);
        }
        else
        {
-         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         ArrayList<Tile> poss = board[i][j].on.threatning();
          for(Tile temp : poss)threatsFalse.add(temp);
        }
      }
@@ -208,13 +208,13 @@ void draw(){
        if(board[i][j].on.col)
        {
          //Threats by Team True
-         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         ArrayList<Tile> poss = board[i][j].on.threatning();
          for(Tile temp : poss)threatsTrue.add(temp);
        }
        else
        {
          //threats by team False
-         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         ArrayList<Tile> poss = board[i][j].on.threatning();
          for(Tile temp : poss)threatsFalse.add(temp);
        }
      }

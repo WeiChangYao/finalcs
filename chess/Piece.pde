@@ -26,6 +26,7 @@ public String toString(){
  }
  
 abstract  public ArrayList<Tile> getpossibles();
+abstract  public ArrayList<Tile> threatning();
  public boolean getColor(){
    return col;
  }

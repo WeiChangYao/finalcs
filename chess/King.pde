@@ -40,4 +40,7 @@ class King extends Piece{
      }
      return tbr1;
  }
+ public ArrayList<Tile> threatning(){
+   return getpossibles();
+   }
 }

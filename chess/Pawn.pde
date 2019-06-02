@@ -35,4 +35,20 @@ class Pawn extends Piece {
      }
      return tbr;
  }
+  public ArrayList<Tile> threatning(){
+     ArrayList<Tile> tbr = new ArrayList<Tile>();
+     int xloc = t.getx()/100;
+     int yloc = t.gety()/100;
+     if(col)
+     {
+     if(xloc<7&&yloc<7)tbr.add(board[xloc+1][yloc+1]);
+     if(xloc>0&&yloc<7)tbr.add(board[xloc-1][yloc+1]);
+     }
+     else
+     {
+     if(xloc<7&&yloc>0)tbr.add(board[xloc+1][yloc-1]);
+     if(xloc>0&&yloc>0)tbr.add(board[xloc-1][yloc-1]);
+     }
+     return tbr;
+   }
 }
