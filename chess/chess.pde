@@ -4,6 +4,12 @@ Tile[][] board;
 Tile start;
 Tile end;
 Piece b;
+ArrayList<Tile> threatsTrue;
+ArrayList<Tile> threatsFalse;
+ArrayList<Tile> legalTrue;
+ArrayList<Tile> legalFalse;
+boolean inCheckTrue;
+boolean inCheckFalse;
 ArrayList<Tile> Holder;
 boolean inmove = false;;
 void setup() {
@@ -24,6 +30,7 @@ void setup() {
     }
     prev= !prev;
   }
+ 
  // This is the block for Creating all of the Pawns appropriatly!
   for(int i = 0; i<8 ; i++){
     Tile f = board[i][1];
@@ -103,6 +110,15 @@ void setup() {
    Q2.addPiece(w2);
    Q1.display();
    Q2.display();
+   
+   Tile K1 = board[4][0];
+   Tile K2 = board[4][7];
+   King p1 = new King(K1,true);
+   King p2 = new King(K2,false);
+   K1.addPiece(p1);
+   K2.addPiece(p2);
+   K1.display();
+   K2.display();
 }
 void draw(){
 }
