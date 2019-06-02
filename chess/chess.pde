@@ -9,11 +9,14 @@ Set<Tile> threatsTrue= new HashSet<Tile>();
 Set<Tile> threatsFalse= new HashSet<Tile>(); 
 Set<Tile> LegalTrue= new HashSet<Tile>(); 
 Set<Tile> LegalFalse= new HashSet<Tile>(); 
-boolean inCheckTrue;
-boolean inCheckFalse;
+boolean inCheckTrue = false;
+boolean inCheckFalse = false;
 ArrayList<Tile> Holder;
-boolean inmove = false;;
+boolean inmove = false;
+Tile KT;
+Tile KF;
 void setup() {
+  // setting up the board
   size(800, 800);
   background(255);
   smooth();
@@ -31,6 +34,7 @@ void setup() {
     }
     prev= !prev;
   }
+  
  
  // This is the block for Creating all of the Pawns appropriatly!
   for(int i = 0; i<8 ; i++){
@@ -43,7 +47,7 @@ void setup() {
     Pawn a = new Pawn(f, false);
     f.addPiece(a);
     f.display();}
-  //ellipse(200+50,0+50,80,80);
+    
   //Block For Creating All Knights Appropriatly
    Tile f = board[1][0];
    Knight a = new Knight(f, true);
@@ -53,7 +57,6 @@ void setup() {
    Knight a1 = new Knight(f1, true);
    f1.addPiece(a1);
    f1.display();
-   
    Tile f2 = board[1][7];
    Knight a2 = new Knight(f2, false);
    f2.addPiece(a2);
@@ -62,47 +65,44 @@ void setup() {
    Knight a3 = new Knight(f3, false);
    f3.addPiece(a3);
    f3.display();
+   
  //Block For Creating All Rooks Appropriatly
    Tile R = board[0][0];
    Rook b = new Rook(R,true);
    R.addPiece(b);
    R.display();
-   
    Tile R2 = board[7][0];
    Rook b2 = new Rook(R2,true);
    R2.addPiece(b2);
    R2.display();
-   
    Tile R3 = board[0][7];
    Rook b3 = new Rook(R3,false);
    R3.addPiece(b3);
    R3.display();
-   
    Tile R4 = board[7][7];
    Rook b4 = new Rook(R4,false);
    R4.addPiece(b4);
    R4.display();
+   
  //This is the block for creating Pishops appropriatley  
    Tile C = board[2][0];
    Bishop S = new Bishop(C,true);
    C.addPiece(S);
    C.display();
-   
    Tile C1 = board[5][0];
    Bishop S1 = new Bishop(C1,true);
    C1.addPiece(S1);
    C1.display();
-   
    Tile C2 = board[2][7];
    Bishop S2 = new Bishop(C2,false);
    C2.addPiece(S2);
    C2.display();
-   
    Tile C3 = board[5][7];
    Bishop S3 = new Bishop(C3,false);
    C3.addPiece(S3);
    C3.display();
-   // THis Block Creates Queens Appropriatly
+   
+// THis Block Creates Queens Appropriatly
    Tile Q1 = board[3][0];
    Tile Q2 = board[3][7];
    Queen w1 = new Queen(Q1,true);
@@ -112,14 +112,37 @@ void setup() {
    Q1.display();
    Q2.display();
    
-   Tile K1 = board[4][0];
-   Tile K2 = board[4][7];
-   King p1 = new King(K1,true);
-   King p2 = new King(K2,false);
-   K1.addPiece(p1);
-   K2.addPiece(p2);
-   K1.display();
-   K2.display();
+// This Block Createst hte Kings appropriatly
+   KT = board[4][0];
+   KF = board[4][7];
+   King p1 = new King(KT,true);
+   King p2 = new King(KF,false);
+   KT.addPiece(p1);
+   KF.addPiece(p2);
+   KT.display();
+   KF.display();
+     //This following keeps up to date on if check the threats;
+  for(int i = 0 ; i < 8 ; i++)
+  {
+    for(int j = 0 ; j < 8 ; j++)
+    {
+     if(board[i][j].on!=null)
+     {
+       if(board[i][j].on.col)
+       {
+         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         for(Tile temp : poss)threatsTrue.add(temp);
+       }
+       else
+       {
+         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         for(Tile temp : poss)threatsFalse.add(temp);
+       }
+     }
+    }
+  }
+ 
+
 }
 void draw(){
 }
@@ -169,7 +192,56 @@ void draw(){
       start = null;
       inmove = false;
       System.out.println("move finished" );
+   
+   
+      
+  //This following keeps up to date on if check the threats;
+  threatsTrue.clear();
+  threatsFalse.clear();
+  for(int i = 0 ; i < 8 ; i++)
+  {
+    for(int j = 0 ; j < 8 ; j++)
+    {
+     if(board[i][j].on!=null)
+     {
+       if(board[i][j].on.col)
+       {
+         //Threats by Team True
+         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         for(Tile temp : poss)threatsTrue.add(temp);
+       }
+       else
+       {
+         //threats by team False
+         ArrayList<Tile> poss = board[i][j].on.getpossibles();
+         for(Tile temp : poss)threatsFalse.add(temp);
+       }
+     }
     }
+  }
+  if(threatsTrue.contains(KF))
+  {
+   System.out.println("King False is in Check");
+   inCheckFalse = true;
+  }
+  else
+  {
+    if(inCheckFalse == true)System.out.println("False King No Longer in Check");
+    inCheckFalse = false;
+  }
+  if(threatsFalse.contains(KT))
+  {
+    System.out.println("King True is in Check");
+    inCheckTrue = true;
+  }
+  else
+  {
+     if(inCheckTrue == true)System.out.println("True King No Longer in Check");
+     inCheckTrue = false;
+  }
+    }
+    
+    
     else{
       start.display();
       inmove=false;
