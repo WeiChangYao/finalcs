@@ -11,6 +11,8 @@ Set<Tile> LegalTrue= new HashSet<Tile>();
 Set<Tile> LegalFalse= new HashSet<Tile>(); 
 boolean inCheckTrue = false;
 boolean inCheckFalse = false;
+Tile threattoTrue;
+Tile threattoFalse;
 ArrayList<Tile> Holder;
 boolean inmove = false;
 Tile KT;
@@ -186,12 +188,11 @@ void draw(){
       tempPiece.t= end;
       System.out.println(tempPiece.t.getx()+"  "+tempPiece.t.gety());
       end.on=tempPiece;
+      if(end.on instanceof King && end.on.col)KT = end;
+      if(end.on instanceof King && !end.on.col)KF = end;
       start.display();
       end.display();
-      end = null;
-      start = null;
-      inmove = false;
-      System.out.println("move finished" );
+
    
    
       
@@ -221,24 +222,33 @@ void draw(){
   }
   if(threatsTrue.contains(KF))
   {
-   System.out.println("King False is in Check");
+   System.out.println("King False is in Check by " + end.on );
    inCheckFalse = true;
+   threattoFalse = end;
   }
   else
   {
     if(inCheckFalse == true)System.out.println("False King No Longer in Check");
     inCheckFalse = false;
+    threattoFalse = null;
   }
   if(threatsFalse.contains(KT))
   {
-    System.out.println("King True is in Check");
+    System.out.println("King True is in Check by Piece at "  + end.on );
     inCheckTrue = true;
+    threattoTrue = end;
   }
   else
   {
      if(inCheckTrue == true)System.out.println("True King No Longer in Check");
      inCheckTrue = false;
+     threattoTrue = null;
   }
+  
+      end = null;
+      start = null;
+      inmove = false;
+      System.out.println("move finished" );
     }
     
     

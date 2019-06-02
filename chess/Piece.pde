@@ -16,6 +16,9 @@ public void move(Tile next){
    col = true;
  
  }
+public String toString(){
+  return "Piece At " + t.getx()+" "+t.gety();
+}
  
  public void display(){
    fill(103,208,36);
