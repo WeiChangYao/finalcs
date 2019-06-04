@@ -2,20 +2,14 @@ class Bishop extends Piece{
   Bishop (Tile t, boolean col){
     super(t,col);
   }
-void display() {
-   if(col)
-   fill(103,208,36);
-   else
-   fill(215,25,25);
-   ellipse(t.getx()+50,t.gety()+50,80,80);
-   fill(255);
-   ellipse(t.getx()+50,t.gety()+50,50,50);
-   if(col)
-   fill(103,208,36);
-   else
-   fill(215,25,25);
-   ellipse(t.getx()+50,t.gety()+50,20,20);
+  void display() {
+    if (col == true) {
+      image(bishop, t.getX()+20, t.getY()+15);
+    } else {
+      image (bishopW,t.getX()+20, t.getY()+15);
+    }
   }
+
   boolean getColor(){
     return col;
   }

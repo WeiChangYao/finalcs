@@ -3,13 +3,11 @@ class Knight extends Piece {
     super(t, col);
   }
   void display() {
-    if (col)
-      fill(103, 208, 36);
-    else
-      fill(215, 25, 25);
-    ellipse(t.getx()+50, t.gety()+50, 80, 80);
-    fill(255);
-    ellipse(t.getx()+50, t.gety()+50, 40, 40);
+    if (col == true) {
+      image(knight, t.getX()+20, t.getY()+15);
+    } else {
+      image (knightW, t.getX()+20, t.getY()+15);
+    }
   }
   boolean getColor() {
     return col;

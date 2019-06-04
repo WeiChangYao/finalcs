@@ -3,15 +3,11 @@ class Rook extends Piece{
     super(t,col);
   }
   void display() {
-    if(col)
-   fill(103,208,36);
-   else
-   fill(215,25,25);
-   ellipse(t.getx()+50,t.gety()+50,80,80);
-   fill(255);
-   rectMode(CENTER);
-   rect(t.getx()+50,t.gety()+50,45,45);
-   rectMode(CORNER);
+    if (col == true) {
+      image(rook,t.getX()+20, t.getY()+15);
+    } else {
+      image (rookW, t.getX()+20, t.getY()+15);
+    }
   }
   boolean getColor(){
     return col;
