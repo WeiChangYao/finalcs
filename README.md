@@ -1,16 +1,26 @@
 # finalcs
-Day 6
+6/4
+  - Wei Chang Yao
+    - changed piece displays
+    - changed board display
+    - added color indicator for check
+    
+5/30
+  - Wei Chang Yao
+    - Piece display centering
+
+5/24
   - Wei Chang Yao
     - added chess png set
     - added classes for each chess piece and their display methods
     
-Day 5
+5/23
   - Wei Chang Yao
     - completed abstract class
     - completed pawn display methods
     - minor things
 
-Day 4
+5/20
   - Wei Chang Yao
     - Created abstract class piece
 
