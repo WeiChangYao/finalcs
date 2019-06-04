@@ -1,4 +1,9 @@
 # finalcs
+Description
+  - Our final project is chess. It follows all the chess rules. Each piece is set up where they are supposed to be; each piece moves the way it should. The 2 players take turns moving their pieces. When the king is in check, it will turn red, meaning that the play controlling that king has to move it. If they can't move the king or save it from destruction, the oppsing player wins, checkmate.
+
+-------------------------------
+DevLog
 6/4
   - Wei Chang Yao
     - changed piece displays
