@@ -9,6 +9,7 @@ class King extends Piece {
       image (kingW, t.getX()+20, t.getY()+15);
     }
   }
+
   boolean getColor() {
     return col;
   }

@@ -29,6 +29,7 @@ PImage queenW;
 PImage kingW;
 PImage rookW;
 PImage bishopW;
+PImage kingR;
 void setup() {
   pawn = loadImage("pawn.png");
   knight = loadImage("knight.png");
@@ -42,6 +43,7 @@ void setup() {
   kingW = loadImage("kingW.png");
   rookW = loadImage("rookW.png");
   bishopW = loadImage("bishopW.png");
+  kingR = loadImage("kingR.png");
   // setting up the board
   size(800, 800);
   background(255);
@@ -171,6 +173,19 @@ void setup() {
 
 }
 void draw(){
+  if(inCheckTrue){
+         image(kingR,KT.getX()+20,KT.getY()+15);
+  }
+  else{
+    image(king,KT.getX()+20,KT.getY()+15);
+  }
+  if(inCheckFalse){
+    image(kingR,KF.getX()+20,KF.getY()+15);
+  }
+  else{
+    image(kingW,KF.getX()+20,KF.getY()+15);
+  }
+   
 }
  void mouseClicked() {
   if(!inmove)
@@ -217,8 +232,6 @@ void draw(){
       start.display();
       end.display();
 
-   
-   
       
   //This following keeps up to date on if check the threats;
   threatsTrue.clear();

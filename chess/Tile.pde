@@ -24,6 +24,9 @@ class Tile {
     rect(xpos, ypos, 100, 100);
     if (on!=null)on.display();
   }
+  void displayR(){
+    fill(255, 204, 0);
+  }
   public void change() {
     fill(155);
     rect(xpos, ypos, 100, 100);
