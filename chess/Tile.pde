@@ -19,8 +19,8 @@ class Tile {
     return ypos;
   }
   public void display() {
-    if (c)fill(255);
-    else fill(0);
+    if (c)fill(255,228,196);
+    else fill(160,82,45);
     rect(xpos, ypos, 100, 100);
     if (on!=null)on.display();
   }
