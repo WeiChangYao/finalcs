@@ -174,7 +174,7 @@ void setup() {
 
 //This part turns the king red when in check
 void draw() {
-  if (inCheckTrue) {
+  /*if (inCheckTrue) {
     image(kingR, KT.getX()+20, KT.getY()+15);
   } else {
     image(king, KT.getX()+20, KT.getY()+15);
@@ -183,7 +183,7 @@ void draw() {
     image(kingR, KF.getX()+20, KF.getY()+15);
   } else {
     image(kingW, KF.getX()+20, KF.getY()+15);
-  }
+  }*/
 }
 void mouseClicked() {
   if (!inmove)
