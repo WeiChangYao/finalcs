@@ -43,3 +43,11 @@ DevLog
 
 5/29>>>> Fixed bugs with previous piece move and started working on specefic Pieces(Ali Taha)
 
+
+5/31>>>> Created All of the Pieces except for the King and set up the normal rules for their movement in the absence of check, in addition Created the highlighter of all possible Moves.
+
+
+6/01>>>>Created the threatning function to determine if the king is in check at a given time or not and maintained a threatning list. Also Created king possible moves such that king doesn't illegally move into check.
+
+6/05>>>>updated Found a bug with the display and fixed it now it displayes properly.
+
