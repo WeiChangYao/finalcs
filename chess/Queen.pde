@@ -4,9 +4,9 @@ class Queen extends Piece {
   }
   void display() {
     if (col == true) {
-      image(queen, t.getX()+20, t.getY()+15);
+      image(king, t.getX()+20, t.getY()+15);
     } else {
-      image (queenW, t.getX()+20, t.getY()+15);
+      image (kingW, t.getX()+20, t.getY()+15);
     }
   }
 

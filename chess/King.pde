@@ -3,10 +3,10 @@ class King extends Piece {
     super(t, col);
   }
   void display() {
-    if (col == true) {
-      image(king, t.getX()+20, t.getY()+15);
+        if (col == true) {
+      image(queen, t.getX()+20, t.getY()+15);
     } else {
-      image (kingW, t.getX()+20, t.getY()+15);
+      image (queenW, t.getX()+20, t.getY()+15);
     }
   }
 
